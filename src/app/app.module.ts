@@ -7,12 +7,14 @@ import { SessionComponent } from './session/session.component';
 
 import  {HttpClientModule } from '@angular/common/http';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SessionComponent,
     LandingPageComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
