@@ -29,3 +29,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Integration of firebase
 -installation of firebase from the project.
+
+## Add components and auth google from firebase
+Components:
+-login: login with google service 
+-mainmenu: the main page from the website 
+-social: page about the social networks 
+-form: page of sign up.
+
+Firebase: 
+add authentication with google.
+Version 1.0
+url Project deploy: https://proyecto-193242.web.app

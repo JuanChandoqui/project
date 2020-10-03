@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
+import "firebase/firestore";
+import "firebase/auth";
   
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-
-  firebase = require('firebase');
-
-  //console.log(firebase.auth); // Undefined
-  //console.log(firebase.default.auth); // Function
 
   constructor(private Auth: AngularFireAuth) {
   }
