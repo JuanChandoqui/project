@@ -1,0 +1,61 @@
+.techornate-social-buttons ul{
+    list-style:none;
+  
+}
+
+.techornate-social-buttons li a{
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:10px 1px 10px 10px;
+    letter-spacing:2px;
+    font-size:10px;
+    color:#fff;
+    display:block;border-radius:3px
+}
+
+.techornate-social-buttons ul li{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:10px;
+    width:20%
+}
+
+.techornate-social-buttons li a i{
+    width:35px;
+    height:14px;
+    float:right;
+    padding:0 0 0 10px;
+    font-size:14px;
+    line-height:14px;
+    border-left:1px solid #B1B1B1;
+}
+
+.techornate-social-buttons li a.social-btn-facebook{
+    background:#3b5998
+}
+
+.techornate-social-buttons li a.social-btn-twitter{
+    background:#1da1f2
+}
+
+.techornate-social-buttons li a.social-btn-youtube{
+    background:#cd201f
+}
+
+.techornate-social-buttons li a.social-btn-instagram{
+    background:#405de6
+}
+    
+.techornate-social-buttons li a.social-btn-google{
+    background:#dd4b39
+} 
+
+.titulo {
+    color: white;
+}
+
+.year{
+    margin-top: 30px;
+    color:darkslategrey ;
+}

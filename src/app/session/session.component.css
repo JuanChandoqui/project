@@ -1,0 +1,25 @@
+.festivals{
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.event-tittle{
+    color: white;
+}
+
+.events-image{
+    margin-right: auto;
+    border-radius: 10px;
+    width: 550px;
+    height: 250px;    
+}
+
+
+.events-description{
+    margin-top: 20px;
+    color: white;
+}
+
+.button-VisitPage{
+    padding: 50px;
+}

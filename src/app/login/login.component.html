@@ -1,0 +1,27 @@
+<div class="text-center">
+    <div class="logoLogin">
+        <img src="https://t0.rbxcdn.com/06f7841eb27859eca513f0763be88415" width="10%" height="10%">
+        <h3 class="titulo">CAT MUSIC</h3>
+    </div>
+</div>
+
+<form class="form-group">
+  <div class="text-center">
+    <div class="button-google">     
+      <button (click)="loginwithGoogle()" type="button" class="btn btn-danger">Sign in with Google</button>
+    </div> 
+
+    <div class="button-MainMenu">
+      <button type="button" disabled  id="botonMainMenu" class="btn btn-primary" routerLink="/mainmenu"> Go to Main Menu </button>
+    </div>
+    <p class="year">© 2020</p>
+  </div>
+</form>
+
+
+
+<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+<script defer src="./init-firebase.js"></script>
+
