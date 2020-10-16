@@ -7,8 +7,8 @@ import {MainmenuComponent} from './mainmenu/mainmenu.component';
 import {FormComponent} from './form/form.component';
 import { LoginComponent } from './login/login.component';
 import { SocialComponent } from './social/social.component';
-
-
+import { DashboardComponent } from './dashboard/dashboard.component'; 
+import { NavTopComponent } from './nav-top/nav-top.component'; 
 
 const routes: Routes = [ 
     {path: '',redirectTo: 'login', pathMatch : 'full'},
@@ -16,7 +16,10 @@ const routes: Routes = [
     {path: 'mainmenu', component : MainmenuComponent},
     {path: 'form', component: FormComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'social', component: SocialComponent}
+    {path: 'social', component: SocialComponent},
+    {path: 'dashboard', component: DashboardComponent},
+    {path: 'nav-top', component: NavTopComponent},
+
 ];
 
 @NgModule({

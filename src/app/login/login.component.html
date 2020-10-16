@@ -5,6 +5,26 @@
     </div>
 </div>
 
+<form class="example-form" (formGroup)="loginFormGroup">
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput type="text" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label> Password </mat-label> 
+    <input matInput type="password" formControlName="password">
+  </mat-form-field>
+
+  <div class="botonLogin">
+    <div class="example-button-row">
+      <button mat-raised-button (click)="login()" (disabled)=loginFormGroup.invalid >Log In</button>
+    </div>
+  </div>
+  
+</form>
+
+
 <form class="form-group">
   <div class="text-center">
     <div class="button-google">     
