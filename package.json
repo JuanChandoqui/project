@@ -8,8 +8,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "generate": "node ./server/generate.js > ./server/database.json",
-    "server": "json-server --watch ./server/database.json",
     "prod": "ng build --prod"
   },
   "private": true,

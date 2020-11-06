@@ -5,7 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 
 import { FormBuilder ,FormGroup, Validators} from '@angular/forms';
 
-import { AuthServiceService } from '../services/auth/auth-service.service';
+import { AuthServiceService } from 'src/app/services/auth/auth-service.service';
 import { Router} from '@angular/router';
 
 
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
         this._router.navigate(['mainmenu']);
         //console.log("Datos Validos");
       }, error=>{
-        console.log("Datos invalidos");
+        console.log("Datos invalidos")
       }
       );
     }
