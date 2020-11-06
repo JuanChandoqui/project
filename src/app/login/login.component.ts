@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
- //new elements 13/10/2020
-import { FormBuilder ,FormGroup, Validators } from '@angular/forms';
+
+//new elements 13/10/2020
+
+import { FormBuilder ,FormGroup, Validators} from '@angular/forms';
+
 import { AuthServiceService } from '../services/auth/auth-service.service';
 import { Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -12,46 +16,47 @@ import { Router} from '@angular/router';
 })
 
 export class LoginComponent implements OnInit {
-
   //new elements 13/10/2020
-loginFormGroup: FormGroup;
+  loginFormGroup: FormGroup;
 
-    ngOnInit(): void {    
-      //new elements 13/10/2020
-      this.loginFormGroup = this._formBuilder.group({
-        email:['', Validators.required],
-        password: ['', Validators.required]
-      });
-    }
-
-     //new elements 13/10/2020 -> parameters and condition if
-    constructor (private authService: AuthService, private _formBuilder: FormBuilder, private _authServiceService: AuthServiceService, private _router: Router){ 
-      //el servicio estara activo en la pagina
-      if(_authServiceService.isAuthenticated()){
-        _router.navigate(['dashboard'])
-      }
+  //new elements 13/10/2020 -> parameters and condition if
+  constructor (private authService: AuthService, private _formBuilder: FormBuilder, private _authServiceService: AuthServiceService, private _router: Router){ 
+    //el servicio estara activo en la pagina
+    
+    if(_authServiceService.isAuthenticated()){
+      _router.navigate(['mainmenu'])
     }
     
-    loginwithGoogle() {
-      this.authService.loginGoogle();
-      document.getElementById("botonMainMenu").removeAttribute("disabled");
   }
 
+  ngOnInit(): void {    
+      //new elements 13/10/2020
+    this.loginFormGroup = this._formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+    
+  }
+
+  loginwithGoogle() {
+    this.authService.loginGoogle();
+    document.getElementById("botonMainMenu").removeAttribute("disabled");
+  }
+  
    //new elements 13/10/2020
   login(): void{
-    const data = this.loginFormGroup.value();
-
+    const data = this.loginFormGroup.value;
     if(data.email && data.password){
       this._authServiceService.login(data.email, data.password).subscribe(access =>{
-        //console.log(access);
+        console.log(access);
         localStorage.setItem('user', JSON.stringify(access));
-        this._router.navigate(['dashboard']);
+        this._router.navigate(['mainmenu']);
         //console.log("Datos Validos");
       }, error=>{
         console.log("Datos invalidos");
       }
       );
     }
-   
   }
+  
 }

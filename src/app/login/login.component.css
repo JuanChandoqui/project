@@ -10,6 +10,11 @@ mat-slider {
     color: white;
 }
 
+.text-SignUp{
+    color: white;
+    text-align: center;
+}
+
 .button-google{
     margin-top: 50px;
 }
@@ -24,7 +29,7 @@ mat-slider {
 }
 
 .example-form {
-    background-color:darkgrey;
+    color: white;
     margin-left: auto;
     margin-right: auto;
     min-width: 150px;
@@ -37,8 +42,8 @@ mat-slider {
 }
 
 .botonLogin{
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 10px;
+    text-align: center;   
 }
 
 .example-button-row {

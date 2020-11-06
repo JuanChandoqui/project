@@ -1,11 +1,35 @@
-<mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+<p>
+  <mat-toolbar>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>My App</span>
+
+    <button mat-button routerLink="/mainmenu">CAT MUSIC</button>
+
+    <mat-menu #menu="matMenu">
+
+      <button mat-menu-item routerLink="/mainmenu"> 
+        <span>Main Menu</span>
+      </button>
+
+      <button mat-menu-item routerLink="/form">
+        <span>Sign Up</span>
+      </button>
+
+      <button mat-menu-item routerLink="/session">
+        <span>Events</span>
+      </button>
+
+      <button mat-menu-item routerLink="/social"> 
+        <span>Social Network</span>
+      </button>
+
+    </mat-menu>
+    
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="logout()">
+
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="logout()">
       <mat-icon>logout</mat-icon>
     </button>
-</mat-toolbar>
-  
+  </mat-toolbar>
+</p>

@@ -13,6 +13,8 @@ export class NavTopComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
+
   }
 
   logout(): void {

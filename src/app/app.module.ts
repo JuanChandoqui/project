@@ -1,44 +1,46 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule } from '@angular/common/http';
 /*Import angular fire*/ 
 import { AngularFireModule} from '@angular/fire';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
+
+//COMPONENTS
 import { AppComponent } from './app.component';
 import { SessionComponent } from './session/session.component';
-
-import { HeaderComponent } from './header/header.component';
 import { FormComponent } from './form/form.component';
 import { MainmenuComponent } from './mainmenu/mainmenu.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavTopComponent } from './nav-top/nav-top.component'; 
+import { TopMusicComponent } from './top-music/top-music.component';
+import { SocialComponent } from './social/social.component';
 
 import { firebaseConfig } from '../environments/firebaseconfig';
-import { SocialComponent } from './social/social.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Importacion de angular material
-import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input'; 
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { MatIconModule } from '@angular/material/icon'; 
+import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     SessionComponent,
-    HeaderComponent,
     FormComponent,
     MainmenuComponent,
     LoginComponent,
     SocialComponent,
-    DashboardComponent,
     NavTopComponent,
+    TopMusicComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,12 +48,17 @@ import { MatIconModule } from '@angular/material/icon';
     AngularFireAuthModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     //Modulos de materiales
-    MatSliderModule,
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    MatMenuModule,
+    MatCardModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
