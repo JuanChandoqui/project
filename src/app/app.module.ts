@@ -14,8 +14,8 @@ import { FormComponent } from './form/form.component';
 import { MainmenuComponent } from './mainmenu/mainmenu.component';
 import { LoginComponent } from './login/login.component';
 import { NavTopComponent } from './nav-top/nav-top.component'; 
-import { TopMusicComponent } from './top-music/top-music.component';
 import { SocialComponent } from './social/social.component';
+import { UsersComponent } from './users/users.component'; 
 
 import { firebaseConfig } from '../environments/firebaseconfig';
 
@@ -29,7 +29,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon'; 
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
-import {MatTableModule} from '@angular/material/table'; 
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import {MatTableModule} from '@angular/material/table';
     LoginComponent,
     SocialComponent,
     NavTopComponent,
-    TopMusicComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

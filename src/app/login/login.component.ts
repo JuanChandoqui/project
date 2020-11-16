@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     //el servicio estara activo en la pagina
     
     if(_authServiceService.isAuthenticated()){
-      _router.navigate(['mainmenu'])
+      _router.navigate(['users'])
     }
     
   }
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       this._authServiceService.login(data.email, data.password).subscribe(access =>{
         console.log(access);
         localStorage.setItem('user', JSON.stringify(access));
-        this._router.navigate(['mainmenu']);
+        this._router.navigate(['users']);
         //console.log("Datos Validos");
       }, error=>{
         console.log("Datos invalidos")

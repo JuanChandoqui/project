@@ -1,0 +1,41 @@
+.card{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenedorbotones{
+    margin-left: 410px;
+    margin-top: 30px;
+}
+
+.buttons{
+    float: left;
+    margin-left: 100px;
+}
+
+.cardRegister{
+    margin-top: 60px;
+    width: 20%;
+    text-align: center; 
+}
+
+.register-user{
+    text-align: center; 
+}
+
+.fields{
+    float: left;
+}
+
+.buttons-Add-User{
+    float: left;
+}
+
+.buttonCancel{
+    margin-left: 90px;
+}
+
+.buttonDeleteCancel{
+    margin-left: 70px;
+}

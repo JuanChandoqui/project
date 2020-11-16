@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class AuthServiceService {
 
-  api = 'https://back193242.herokuapp.com/api/v1/login/';
+  api  = 'https://deployback.herokuapp.com/api/v1/login/';
+
   constructor(private http: HttpClient) { 
   }
 
   isAuthenticated (): boolean {
     let user = JSON.parse(localStorage.getItem('user'));
-
     if(user){
       return user['token'] ? true : false;
     }else{
@@ -32,4 +32,27 @@ export class AuthServiceService {
     return this.http.post(this.api, {username, password}, httpOptions);
     //return this.http.get('${this.api}api/v1/login/', httpOptions);
   }
+  
+  //Get User
+  getUser():  Observable<any> {
+    const httpOptions = {
+      headers : new HttpHeaders ({
+        'Content-Type' : 'application/json',
+        'Accept': 'application/json' ,
+      })
+    }
+    console.log(this.api);
+    return this.http.get(this.api, httpOptions) 
+  }
+
+  //Post User
+  addUser(username: string, password: string, email: string): Observable<any> {
+    const httpOptions = {
+      headers : new HttpHeaders ({
+        'Content-Type' : 'application/json',
+      })
+    };
+    return this.http.post(this.api, {username, password, email}, httpOptions)
+  }
+
 }

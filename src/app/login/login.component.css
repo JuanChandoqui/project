@@ -51,7 +51,17 @@ mat-slider {
     width: 490px;
   }
   
-  .example-button-row .mat-button-base {
+.example-button-row .mat-button-base {
     margin: 8px 8px 8px 0;
-  }
-  
+}
+
+.box-login{
+    width: 270px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}  
+
+.form-group{
+    margin-top: auto;
+}
