@@ -30,11 +30,19 @@
 <div class="contenedorbotones">
     <div class="buttons">      
             <button type="button" class="btn btn-primary" (click)="showBoxAdd()">Add User
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                </svg>   
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zM13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                </svg>
             </button>
+    </div>
+
+    <div class="buttons">
+        <button type="button" class="btn btn-light" (click)="showBoxUpdate()"> Update User
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-counterclockwise" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+              </svg>
+        </button>
     </div>
 
     <div class="buttons">
@@ -85,13 +93,56 @@
 
 </div>
 
+        <!--UPDATE USER-->
+<div class="card text-white bg-dark cardRegister" *ngIf=statusUpdate>
+    <h5 class="card-header text-center">UPDATE USER</h5>
+    <div class="register-user"> 
+        <form class="text-register fields" [formGroup]="updateFormGroup">
+
+            <mat-form-field class="example-full-width">
+                <mat-label>No. Usuario</mat-label>
+                <input matInput type="number" formControlName="id">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" formControlName="first_name">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Last name</mat-label>
+                <input matInput type="text" formControlName="last_name">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Age  (Only numbers)</mat-label>
+                <input matInput type="number" formControlName="age">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email">
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div class="card-footer text-muted">
+        <div class="buttons-Add-User">
+            <button type="button" class="btn btn-primary" (click)="updateUser()">Update</button>
+            <button type="button" class="btn btn-danger buttonCancel" (click)="hideBoxs()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+            <!--DELETE USER-->
 <div class="card text-white bg-dark cardRegister" *ngIf=statusDelete>
     <h5 class="card-header text-center">DELETE USER</h5>
     <form class="text-register fields" [formGroup]="deleteFormGroup">
 
         <mat-form-field class="example-full-width">
             <mat-label>NO Usuario</mat-label>
-            <input matInput type="text" formControlName="noUsuario">
+            <input matInput type="text" formControlName="id">
         </mat-form-field>
     </form>
 
@@ -102,4 +153,3 @@
         </div>
     </div>
 </div>
-

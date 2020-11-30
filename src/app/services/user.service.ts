@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  api  = 'https://deployback.herokuapp.com/api/v1/user/userProfile_url/';
+  //api  = 'https://deployback.herokuapp.com/api/v1/user/userProfile_url/';
+  api = 'http://localhost:7000/';
 
   constructor(private http: HttpClient) { }
 
@@ -21,10 +22,11 @@ export class UserService {
     }
 
     console.log(this.api);
-    return this.http.get(this.api, httpOptions) 
+    return this.http.get(this.api.concat('api/v1/user/userProfile_url/'), httpOptions) 
   }
 
-  PutUser(first_name: string, last_name: string, email: string, age: number, userModel : number){
+  
+  postUser(first_name: string, last_name: string, email: string, age: number, userModel : number){   
     const httpOptions = {
       headers : new HttpHeaders ({
         'Content-Type' : 'application/json',
@@ -33,7 +35,26 @@ export class UserService {
     }
 
     console.log(this.api);
-    return this.http.put(this.api, {first_name, last_name, email, age, userModel}, httpOptions) 
+    return this.http.post(this.api.concat('api/v1/user/userProfile_url/'), {first_name, last_name, email, age, userModel}, httpOptions) 
+  }  
+
+  putUser(idUser: number,first_name: string, last_name: string, email: string, age: number){
+    const httpOptions = {
+      headers : new HttpHeaders ({
+        'Content-Type' : 'application/json',
+        'Accept': 'application/json' ,     
+      }),
+      body: {
+        id: idUser,
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        age: age
+      },
+    }
+    console.log(this.api);
+    console.log('id:', idUser);
+    return this.http.put(this.api.concat('api/v1/user/userProfile_url/'), httpOptions)
   }
 
   deleteUser(idUser: number){
@@ -41,9 +62,12 @@ export class UserService {
         headers : new HttpHeaders ({
           'Content-Type' : 'application/json',
           'Accept': 'application/json' ,
-        })
+        }),
+        body: {
+          id: idUser,
+        },
     }
-    console.log(this.api);
-    return this.http.delete(this.api+idUser+'/', httpOptions)
+    return this.http.delete(this.api.concat('api/v1/user/userProfile_url/'), httpOptions)
   }
+
 }

@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthServiceService {
 
-  api  = 'https://deployback.herokuapp.com/api/v1/login/';
+  //api  = 'https://deployback.herokuapp.com/api/v1/login/';
+  api = 'http://localhost:7000/api/v1/login/';
 
   constructor(private http: HttpClient) { 
   }
