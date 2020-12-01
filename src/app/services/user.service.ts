@@ -45,16 +45,11 @@ export class UserService {
         'Accept': 'application/json' ,     
       }),
       body: {
-        id: idUser,
-        first_name: first_name,
-        last_name: last_name,
-        email: email,
-        age: age
-      },
+        'id': idUser,
+      }
     }
-    console.log(this.api);
     console.log('id:', idUser);
-    return this.http.put(this.api.concat('api/v1/user/userProfile_url/'), httpOptions)
+    return this.http.put(this.api.concat('api/v1/user/userProfile_url/'), {first_name, last_name, email, age}, httpOptions)
   }
 
   deleteUser(idUser: number){

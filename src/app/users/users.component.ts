@@ -71,7 +71,7 @@ export class UsersComponent implements OnInit {
 
   updateUser(): void{
     const data = this.updateFormGroup.value;
-    if(data.id && data.first_name && data.last_name && data.age && data.email){    
+    if(data.id){    
         data.id = Number(data.id) //<-- parse String to Number
         data.age = Number(data.age) //<-- parse String to Number
         console.log(data.id)
