@@ -71,14 +71,10 @@ export class UsersComponent implements OnInit {
 
   updateUser(): void{
     const data = this.updateFormGroup.value;
-    if(data.id){    
+    if(data.id && data.first_name && data.last_name && data.email && data.age){    
         data.id = Number(data.id) //<-- parse String to Number
         data.age = Number(data.age) //<-- parse String to Number
-        console.log(data.id)
-        console.log(data.age)
-        console.log(data.first_name)
-        console.log(data.last_name)
-        console.log(data.email)
+
       if(data.id>0){
         this._userService.putUser(data.id, data.first_name, data.last_name, data.email, data.age).subscribe(access =>{
         console.log(access);
@@ -87,8 +83,6 @@ export class UsersComponent implements OnInit {
           window.location.reload();
         });
         }, error=>{
-          if(error.status==500)
-            console.log(error)
           console.log("Datos invalidos")
         });
       }

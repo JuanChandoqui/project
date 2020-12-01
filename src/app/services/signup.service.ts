@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class SignupService {
 
-  api = 'http://localhost:7000/api/v1/register/';
+  api = 'http://localhost:7000/';
 
   constructor(private http: HttpClient) { 
 
@@ -21,8 +21,7 @@ export class SignupService {
       })
     };
     console.log(this.api);
-    return this.http.post(this.api, {username, password, email}, httpOptions);
-    //return this.http.get('${this.api}api/v1/login/', httpOptions);
+    return this.http.post(this.api.concat('api/v1/register/'), {username, password, email}, httpOptions);
   }
   
 }
