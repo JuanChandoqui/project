@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class SignupService {
 
-  api = 'http://localhost:7000/';
+  api = 'http://catmusic.ddns.net/';
 
   constructor(private http: HttpClient) { 
 

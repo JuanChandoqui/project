@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthServiceService {
 
-  api = 'catmusic.ddns.net/api/v1/login/';
-
+  api = 'http://catmusic.ddns.net/api/v1/login/';
+  
   constructor(private http: HttpClient) { 
   }
 
