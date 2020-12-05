@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class SignupService {
 
-  api = 'http://localhost:7000/';
+  api  = 'https://deployback.herokuapp.com/';
 
   constructor(private http: HttpClient) { 
 

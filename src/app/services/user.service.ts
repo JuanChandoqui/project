@@ -8,8 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  //api  = 'https://deployback.herokuapp.com/api/v1/user/userProfile_url/';
-  api = 'http://localhost:7000/';
+  api  = 'https://deployback.herokuapp.com/';
 
   constructor(private http: HttpClient) { 
 
